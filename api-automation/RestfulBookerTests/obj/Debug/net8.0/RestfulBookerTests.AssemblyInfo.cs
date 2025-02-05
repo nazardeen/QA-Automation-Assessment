@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestfulBookerTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fd7f79c32858454f8489163d04c3888ec8dca7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0194478fb3b80b7d8b76e9e86cd0fbd7c4729987")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestfulBookerTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestfulBookerTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

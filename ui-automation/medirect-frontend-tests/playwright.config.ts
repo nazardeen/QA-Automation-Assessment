@@ -6,9 +6,12 @@ export default defineConfig({
   expect: {
     timeout: 5_000
   },
+  fullyParallel: true, 
+  workers: 6, 
   reporter: [['html', { outputFolder: 'test-report' }]],
   use: {
     headless: true,
+    trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'
   },

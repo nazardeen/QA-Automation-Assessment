@@ -100,7 +100,10 @@ namespace RestfulBookerTests.ApiClients
                 _authToken = await CreateToken();
             }
         }
-
+        public string? GetStoredAuthToken()
+        {
+            return _authToken;
+        }
         private async Task<string?> CreateToken()
         {
             var request = new RestRequest("/auth", Method.Post);

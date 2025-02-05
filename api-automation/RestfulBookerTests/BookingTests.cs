@@ -25,6 +25,22 @@ namespace RestfulBookerTests
         }
 
         [Fact]
+        public async Task EnsureAuthToken_ShouldRetrieveAndStoreToken()
+        {
+
+            await _api.GetBooking(1); 
+
+            string? token = _api.GetStoredAuthToken();
+            Console.WriteLine("DEBUG: Retrieved Auth Token -> " + token);
+
+
+            token.Should().NotBeNullOrEmpty("Auth token should not be null or empty");
+            token.Should().MatchRegex("^[a-zA-Z0-9]+$", "Auth token should contain only alphanumeric characters");
+        }
+
+
+
+        [Fact]
         public async Task CreateBooking_ShouldReturnSuccessAndBookingId()
         {
             var bookingDetails = new

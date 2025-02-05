@@ -1,4 +1,4 @@
-# **QA** {#qa}
+# **QA Automation Assesment** 
 
 # **TABLE OF CONTENTS** {#table-of-contents}
 
@@ -350,7 +350,7 @@ This repository also includes UI tests for **MeDirect Equities Search**, impleme
 ├── playwright.config.ts (Playwright config)
 
 ├── package.json (Project dependencies)
-
+**RESULTS ARE IN QA-Automation-Assessment\ui-automation\medirect-frontend-tests\test-reports\html**
 ---
 
 ## **Troubleshooting & Common Issues** {#troubleshooting-&-common-issues}

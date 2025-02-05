@@ -112,10 +112,10 @@ export class EquitiesSearchPage {
     if (type === 'ETFs') {
 
       const disclaimerPopup = this.page.locator('text=Disclaimer prior to allowing the search');
-      if (await disclaimerPopup.isVisible({ timeout: 2000 })) {
+      if (await disclaimerPopup.isVisible({ timeout: 3000 })) {
         console.log('Disclaimer popup detected. Accepting...');
         await this.page.locator('text=Accept and start searching').click();
-        await this.page.waitForLoadState('networkidle', { timeout: 7000 }); 
+        await this.page.waitForLoadState('networkidle', { timeout: 10000 }); 
       }
     }
     await this.resultsTable.waitFor({ state: 'visible', timeout: 10000 });

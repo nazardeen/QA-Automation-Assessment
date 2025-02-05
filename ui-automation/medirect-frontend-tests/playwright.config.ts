@@ -8,7 +8,7 @@ export default defineConfig({
   },
   fullyParallel: true, 
   workers: 8, 
-  reporter: [['html', { outputFolder: 'test-report' }]],
+  reporter: [['html', { outputFolder: 'test-reports/html' }]],
   use: {
     headless: true,
     trace: 'on-first-retry',

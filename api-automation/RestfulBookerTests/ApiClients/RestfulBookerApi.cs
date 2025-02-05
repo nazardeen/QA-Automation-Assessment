@@ -129,5 +129,34 @@ namespace RestfulBookerTests.ApiClients
                 return null;
             }
         }
+
+
+        public async Task<RestResponse> Authenticate()
+        {
+            var request = new RestRequest("/auth", Method.Post);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddJsonBody(new { username = "admin", password = "password123" });
+
+            var response = await _client.ExecuteAsync(request);
+
+            if (!string.IsNullOrWhiteSpace(response.Content))
+            {
+                try
+                {
+                    var tokenJson = JsonSerializer.Deserialize<Dictionary<string, string>>(response.Content);
+                    if (tokenJson != null && tokenJson.ContainsKey("token"))
+                    {
+                        _authToken = tokenJson["token"];  // ✅ Store the token
+                        Console.WriteLine($"DEBUG: Stored Auth Token -> {_authToken}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"DEBUG: Error parsing auth token response: {ex.Message}");
+                }
+            }
+            return response;
+        }
+
     }
 }

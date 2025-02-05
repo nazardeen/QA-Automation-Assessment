@@ -7,13 +7,13 @@ export default defineConfig({
     timeout: 5_000
   },
   fullyParallel: true, 
-  workers: 6, 
+  workers: 8, 
   reporter: [['html', { outputFolder: 'test-report' }]],
   use: {
     headless: true,
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure'
+    screenshot: 'on',
+    video: 'on'
   },
   projects: [
     {

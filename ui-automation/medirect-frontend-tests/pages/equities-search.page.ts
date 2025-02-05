@@ -38,8 +38,8 @@ export class EquitiesSearchPage {
   }
 
   async getRowCount(): Promise<number> {
-    // this is to select table row that is not header
-    return this.page.locator('.elementor-widget-stocksearchlist table tr:not(.me-tbl-header-row)').count();
+    
+    return this.page.locator('.elementor-widget-stocksearchlist table tr:not(.me-tbl-header-row)').count();// this is to select table row that is not header
   }
 
   async searchForStock(stockName: string) {
@@ -102,6 +102,33 @@ export class EquitiesSearchPage {
     
     return rows.nth(index).locator('td:nth-child(2)').innerText();  
   }
+  
+  async selectSecurityType(type: 'Funds' | 'Equities' | 'ETFs' | 'Bonds') {
+    const securityTab = this.page.locator('.me-navigation-tabs a p.me-text', { hasText: type });
+  
+    await securityTab.click();
+    await this.page.waitForLoadState('networkidle', { timeout: 5000 });
+  
+    if (type === 'ETFs') {
+
+      const disclaimerPopup = this.page.locator('text=Disclaimer prior to allowing the search');
+      if (await disclaimerPopup.isVisible({ timeout: 2000 })) {
+        console.log('Disclaimer popup detected. Accepting...');
+        await this.page.locator('text=Accept and start searching').click();
+        await this.page.waitForLoadState('networkidle', { timeout: 7000 }); 
+      }
+    }
+    await this.resultsTable.waitFor({ state: 'visible', timeout: 10000 });
+  
+    console.log(`Successfully switched to ${type} tab.`);
+  }
+  
+  
+  
+  
+  
+  
+  
   
   
 

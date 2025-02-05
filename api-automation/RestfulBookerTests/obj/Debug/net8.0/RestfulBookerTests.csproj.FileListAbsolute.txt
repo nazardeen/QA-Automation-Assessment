@@ -100,3 +100,6 @@ D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\obj\Debug\net8.0\r
 D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\obj\Debug\net8.0\RestfulBookerTests.pdb
 D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\obj\Debug\net8.0\RestfulBookerTests.genruntimeconfig.cache
 D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\obj\Debug\net8.0\ref\RestfulBookerTests.dll
+D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.Extension.JUnit.Xml.TestLogger.dll
+D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.Extension.JUnit.Xml.TestAdapter.dll
+D:\QA-Automation-Assessment\api-automation\RestfulBookerTests\bin\Debug\net8.0\Spekt.TestLogger.dll

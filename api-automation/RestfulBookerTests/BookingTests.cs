@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using RestfulBookerTests.ApiClients;
 using FluentAssertions;
 using Xunit;
+using System.Text.Json;
 
 namespace RestfulBookerTests
 {
@@ -24,19 +25,19 @@ namespace RestfulBookerTests
             response.Content.Should().Contain("Created");
         }
 
-        [Fact]
-        public async Task EnsureAuthToken_ShouldRetrieveAndStoreToken()
-        {
+        // [Fact]
+        // public async Task EnsureAuthToken_ShouldRetrieveAndStoreToken()
+        // {
 
-            await _api.GetBooking(1); 
+        //     await _api.GetBooking(1); 
 
-            string? token = _api.GetStoredAuthToken();
-            Console.WriteLine("DEBUG: Retrieved Auth Token -> " + token);
+        //     string? token = _api.GetStoredAuthToken();
+        //     Console.WriteLine("DEBUG: Retrieved Auth Token -> " + token);
 
 
-            token.Should().NotBeNullOrEmpty("Auth token should not be null or empty");
-            token.Should().MatchRegex("^[a-zA-Z0-9]+$", "Auth token should contain only alphanumeric characters");
-        }
+        //     token.Should().NotBeNullOrEmpty("Auth token should not be null or empty");
+        //     token.Should().MatchRegex("^[a-zA-Z0-9]+$", "Auth token should contain only alphanumeric characters");
+        // }
 
 
 
@@ -141,6 +142,29 @@ namespace RestfulBookerTests
             
             getResponse.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
+
+        [Fact]
+        public async Task GetToken_ShouldReturnValidToken()
+        {
+            var response = await _api.Authenticate();
+            
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            
+            response.Content.Should().NotBeNullOrEmpty("Auth API response should not be null or empty");
+            
+            var tokenJson = JsonSerializer.Deserialize<Dictionary<string, string>>(response.Content!)!;
+            tokenJson.Should().ContainKey("token", "Auth response should contain a token field");
+            
+            string token = tokenJson["token"];
+            token.Should().NotBeNullOrEmpty("Auth token should not be null or empty");
+            token.Should().MatchRegex("^[a-zA-Z0-9]+$", "Auth token should be alphanumeric");
+            
+            string? storedToken = _api.GetStoredAuthToken();
+            storedToken.Should().NotBeNullOrEmpty("Stored token should not be null or empty");
+            storedToken.Should().Be(token, "Token should be stored after authentication");
+        }
+
+
 
     }
 }

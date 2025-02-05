@@ -9,6 +9,7 @@
       "RestfulBookerTests/1.0.0": {
         "dependencies": {
           "FluentAssertions": "8.0.1",
+          "JunitXml.TestLogger": "3.0.124",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "RestSharp": "112.1.0",
           "xunit": "2.5.3",
@@ -26,6 +27,7 @@
           }
         }
       },
+      "JunitXml.TestLogger/3.0.124": {},
       "Microsoft.CodeCoverage/17.8.0": {
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -1050,6 +1052,13 @@
       "sha512": "sha512-IW5CdXiD4BIijMkJsEajhkQr7HSgzoxZBHp77b4tm8isCKGaDH2AGugW6DLS0/EPhO/MCZ2JOGg6ObdlKISJMg==",
       "path": "fluentassertions/8.0.1",
       "hashPath": "fluentassertions.8.0.1.nupkg.sha512"
+    },
+    "JunitXml.TestLogger/3.0.124": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QTZhSNm/xjj24W1yterf6eABv6KO+Y9jBqpau5RzPehdXTXkZcGQaLf/i50nTl+qnSwpbKkrC+bSyvLRE1ZNAg==",
+      "path": "junitxml.testlogger/3.0.124",
+      "hashPath": "junitxml.testlogger.3.0.124.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/17.8.0": {
       "type": "package",

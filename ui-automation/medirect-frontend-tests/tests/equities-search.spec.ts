@@ -11,6 +11,31 @@ test.describe('Equities Search Tests', () => {
     await equitiesPage.acceptCookiesIfVisible();
   });
 
+  test('Navigate between security types and verify correct list is displayed', async ({ page }) => {
+    const investPage = new EquitiesSearchPage(page);
+  
+    await investPage.navigate();
+    await investPage.acceptCookiesIfVisible();
+  
+    const securityTypes = ['Funds', 'Equities', 'ETFs', 'Bonds'] as const;
+  
+    for (const type of securityTypes) {
+      console.log(`Switching to ${type} tab...`);
+      await investPage.selectSecurityType(type);
+  
+      const rowCount = await investPage.getRowCount();
+      expect(rowCount).toBeGreaterThan(0);
+      console.log(`${type} tab loaded successfully with ${rowCount} rows.`);
+    }
+  });
+  
+  
+  
+  
+  
+  
+  
+  
   test('Verify equities list is displayed', async () => {
     await equitiesPage.waitForEquitiesTable();
     const rowCount = await equitiesPage.getRowCount();

@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "JunitXml.TestLogger": {
+              "target": "Package",
+              "version": "[3.0.124, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.8.0, )"

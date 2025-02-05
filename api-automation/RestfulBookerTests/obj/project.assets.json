@@ -15,6 +15,12 @@
           }
         }
       },
+      "JunitXml.TestLogger/3.0.124": {
+        "type": "package",
+        "build": {
+          "build/netstandard1.5/JUnitXml.TestLogger.props": {}
+        }
+      },
       "Microsoft.CodeCoverage/17.8.0": {
         "type": "package",
         "compile": {
@@ -1757,6 +1763,23 @@
         "lib/netstandard2.1/FluentAssertions.pdb",
         "lib/netstandard2.1/FluentAssertions.xml",
         "tools/init.ps1"
+      ]
+    },
+    "JunitXml.TestLogger/3.0.124": {
+      "sha512": "QTZhSNm/xjj24W1yterf6eABv6KO+Y9jBqpau5RzPehdXTXkZcGQaLf/i50nTl+qnSwpbKkrC+bSyvLRE1ZNAg==",
+      "type": "package",
+      "path": "junitxml.testlogger/3.0.124",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/_common/Microsoft.VisualStudio.TestPlatform.Extension.JUnit.Xml.TestAdapter.dll",
+        "build/_common/Microsoft.VisualStudio.TestPlatform.Extension.JUnit.Xml.TestLogger.dll",
+        "build/_common/Spekt.TestLogger.dll",
+        "build/net46/JUnitXml.TestLogger.props",
+        "build/netstandard1.5/JUnitXml.TestLogger.props",
+        "junitxml.testlogger.3.0.124.nupkg.sha512",
+        "junitxml.testlogger.nuspec",
+        "packageIcon.png"
       ]
     },
     "Microsoft.CodeCoverage/17.8.0": {
@@ -5521,6 +5544,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "FluentAssertions >= 8.0.1",
+      "JunitXml.TestLogger >= 3.0.124",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "RestSharp >= 112.1.0",
       "xunit >= 2.5.3",
@@ -5572,6 +5596,10 @@
           "FluentAssertions": {
             "target": "Package",
             "version": "[8.0.1, )"
+          },
+          "JunitXml.TestLogger": {
+            "target": "Package",
+            "version": "[3.0.124, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

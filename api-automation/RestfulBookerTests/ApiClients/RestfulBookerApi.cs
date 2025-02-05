@@ -146,7 +146,7 @@ namespace RestfulBookerTests.ApiClients
                     var tokenJson = JsonSerializer.Deserialize<Dictionary<string, string>>(response.Content);
                     if (tokenJson != null && tokenJson.ContainsKey("token"))
                     {
-                        _authToken = tokenJson["token"];  // ✅ Store the token
+                        _authToken = tokenJson["token"]; 
                         Console.WriteLine($"DEBUG: Stored Auth Token -> {_authToken}");
                     }
                 }

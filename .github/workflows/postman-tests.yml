@@ -1,0 +1,12 @@
+      - name: Install Newman HTML Reporter
+        run: npm install -g newman-reporter-html
+
+      - name: Run Postman Tests with HTML Report
+        run: |
+          newman run postman-collection/Restful_Booker_API.postman_collection.json -e postman-collection/Restful_BA_Env.postman_environment.json
+
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: postman-html-report
+          path: postman-report.html

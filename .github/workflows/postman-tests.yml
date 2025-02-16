@@ -3,7 +3,10 @@
 
       - name: Run Postman Tests with HTML Report
         run: |
-          newman run postman-collection/Restful_Booker_API.postman_collection.json -e postman-collection/Restful_BA_Env.postman_environment.json
+          newman run postman-collection/Restful_Booker_API.postman_collection.json \
+            -e postman-collection/Restful_BA_Env.postman_environment.json \
+            --reporters cli,html \
+            --reporter-html-export postman-report.html
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v3
